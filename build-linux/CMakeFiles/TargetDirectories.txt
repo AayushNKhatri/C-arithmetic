@@ -1,0 +1,3 @@
+/home/midas/Code/Personal/C/Calculator/build-linux/CMakeFiles/main.dir
+/home/midas/Code/Personal/C/Calculator/build-linux/CMakeFiles/edit_cache.dir
+/home/midas/Code/Personal/C/Calculator/build-linux/CMakeFiles/rebuild_cache.dir
