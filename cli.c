@@ -2,22 +2,49 @@
 #include "header.h"
 #include <stdbool.h>
 int cli(){
-    char userInput;
+    int userInput;
     char exitCommand;
-    int number1;
-    int number2;
+    float number1;
+    float number2;
+    int result;
     bool running = true;
-    
+
     while (running == true) {
-      printf("Enter what operation you want to do:\n");
       printf("Enter the first number:\n");
-      scanf(" %d", &number1);
+      if(scanf(" %f", &number1) != 1){
+        printf("Please enter the number\n");
+        while (getchar() != '\n');
+        continue;
+      };
       printf("Enter the second number:\n");
-      scanf(" %d", &number2);
-      printf("Enter the operation +, -, *, /, moduler: \n"); 
-      scanf(" %c", &userInput);
-    
-      int result  = intCalculation(number1, number2, userInput);
+      if(scanf(" %f", &number2) != 1){
+        printf("Please enter the number\n");
+        while (getchar() != '\n');
+        continue;
+      };
+      printf("Enter the operation\n _______________ \n 1. Add\n 2. Sub\n 3.Multiplication\n 4. Division\n");
+      scanf(" %d", &userInput);
+      if(userInput < 1 || userInput > 4){
+        printf("Please Enter the valid Option\n");
+      };
+
+       switch (userInput) {
+        case 1:
+          result = intCalculation(number1, number2, '+');
+          break;
+        case 2:
+          result = intCalculation(number1,number2,'-');
+          break;
+        case 3:
+          result = intCalculation(number2, number2, '*');
+          break;
+        case 4:
+          result = intCalculation(number1, number2, '/');
+          break;
+        default:
+          printf("The calculation is invalid\n");
+          break;
+       }
       printf("%d\n", result);
       printf("Do you want to continue(Y/n):\n");
       scanf(" %c", &exitCommand);

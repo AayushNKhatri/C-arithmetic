@@ -2,6 +2,6 @@
 #define HEADER_H
 
 int cli();
-int intCalculation (int number1 ,int number2, char operation); 
+int intCalculation (float number1 ,float number2,char operation); 
 
 #endif // !DEBUG
